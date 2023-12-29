@@ -1,0 +1,22 @@
+{
+  "name": "javascript_calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevin-Lamanna/javascript_calculator.git#master"
+  },
+  "author": "Kevin Lamanna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kevin-Lamanna/javascript_calculator/issues"
+  },
+  "homepage": "https://github.com/Kevin-Lamanna/javascript_calculator/tree/master#readme",
+  "dependencies": {
+    "sass": "^1.69.6"
+  }
+}
