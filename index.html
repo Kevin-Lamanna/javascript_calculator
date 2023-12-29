@@ -5,58 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules\@fortawesome\fontawesome-free\css\all.css">
     <title>My Calculator</title>
 </head>
 
 <body>
-    <div class="calc-container">
-        <p class="calculation"></p>
-        <h1 class="result">0</h1>
+    <div class="container">
+        <div class="calc-container">
+            <p class="calculation"></p>
+            <h1 class="result">0</h1>
+        </div>
+        <div class="operations-container">
+            <table class="operations">
+                <tr>
+                    <td class="operation percent">
+                        <p>%</p>
+                    </td>
+                    <td class="operation c_e">
+                        <p>CE</p>
+                    </td>
+                    <td class="operation clear">
+                        <p>C</p>
+                    </td>
+                    <td class="operation back-btn"><i class="fa-solid fa-delete-left"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        <p>1/x</p>
+                    </td>
+                    <td class="operation"><i class="fa-solid fa-superscript"></i></td>
+                    <td class="operation"><i class="fa-solid fa-square-root-variable"></i></td>
+                    <td class="operation"><i class="fa-solid fa-divide"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        <p>7</p>
+                    </td>
+                    <td class="operation">
+                        <p>8</p>
+                    </td>
+                    <td class="operation">
+                        <p>9</p>
+                    </td>
+                    <td class="operation"><i class="fa-solid fa-xmark"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        <p>4</p>
+                    </td>
+                    <td class="operation">
+                        <p>5</p>
+                    </td>
+                    <td class="operation">
+                        <p>6</p>
+                    </td>
+                    <td class="operation"><i class="fa-solid fa-minus"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        <p>1</p>
+                    </td>
+                    <td class="operation">
+                        <p>2</p>
+                    </td>
+                    <td class="operation">
+                        <p>3</p>
+                    </td>
+                    <td class="operation"><i class="fa-solid fa-plus"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation">
+                        <p>+/-</p>
+                    </td>
+                    <td class="operation">
+                        <p>0</p>
+                    </td>
+                    <td class="operation">
+                        <p>.</p>
+                    </td>
+                    <td class="operation"><i class="fa-solid fa-equals"></i></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div class="operations-container">
-        <table class="operations">
-            <tr>
-                <td class="operation percent">%</td>
-                <td class="operation c_e">
-                    <p>CE</p>
-                </td>
-                <td class="operation clear">
-                    <p>C</p>
-                </td>
-                <td class="operation back-btn"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">7</td>
-                <td class="operation">8</td>
-                <td class="operation">9</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">4</td>
-                <td class="operation">5</td>
-                <td class="operation">6</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">1</td>
-                <td class="operation">2</td>
-                <td class="operation">3</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation"><i></i></td>
-                <td class="operation">0</td>
-                <td class="operation">.</td>
-                <td class="operation">=</td>
-            </tr>
-        </table>
-    </div>
+
 
 
     <script src="calculator.js"></script>

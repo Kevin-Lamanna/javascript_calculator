@@ -1,1 +1,41 @@
-/*# sourceMappingURL=styles.css.map */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.calc-container {
+  position: relative;
+  background-color: white;
+}
+.calc-container .result {
+  text-align: right;
+  justify-content: right;
+}
+
+.operations-container {
+  position: relative;
+}
+
+td {
+  padding: 0;
+  background-color: white;
+}
+
+.operation {
+  padding: 2rem;
+  border-style: solid;
+  border-color: black;
+  border: 2px;
+  text-align: center;
+  justify-content: center;
+}
+.operation i {
+  font-size: 1.2rem;
+}
+.operation p {
+  font-weight: 700;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=styles.css.map */
