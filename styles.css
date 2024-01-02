@@ -12,13 +12,13 @@
   background-color: white;
   margin-bottom: 1.5rem;
 }
-.calc-container .calculation {
+.calc-container #calculation {
   text-align: right;
   justify-content: right;
-  font-size: 0.5rem;
-  color: gray;
+  font-size: 0.8rem;
+  color: black;
 }
-.calc-container .result {
+.calc-container #result {
   text-align: right;
   justify-content: right;
 }
