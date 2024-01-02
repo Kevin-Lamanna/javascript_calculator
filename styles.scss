@@ -4,11 +4,20 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+    margin: 2rem;
 }
 
 .calc-container {
     position: relative;
     background-color: white;
+    margin-bottom: 1.5rem;
+
+    .calculation {
+        text-align: right;
+        justify-content: right;
+        font-size: 0.5rem;
+        color: gray
+    }
 
     .result {
         text-align: right;
@@ -26,19 +35,40 @@ td {
 }
 
 .operation {
-    padding: 2rem;
+    padding: 1rem;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+    margin: 1.2rem;
     border-style: solid;
     border-color: black;
     border: 2px;
     text-align: center;
     justify-content: center;
+    background-color: greenyellow;
 
     i {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     p {
         font-weight: 700;
         font-size: 1.2rem;
     }
+
+
+
+}
+
+.operation:hover {
+    transform: scale(1.1);
+    background-color: aquamarine;
+}
+
+.equal {
+    background-color: blue;
+}
+
+.equal:hover {
+    transform: scale(1.1);
+    background-color: purple;
 }
