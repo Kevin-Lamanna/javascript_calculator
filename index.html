@@ -12,7 +12,6 @@
 <body>
     <div class="container">
         <div class="calc-container">
-            <p id="my_error"></p>
             <p id="calculation"></p>
             <h1 id="result">0</h1>
         </div>
@@ -35,9 +34,12 @@
                     <td class="operation" id="reciprocolBtn">
                         <p>1/x</p>
                     </td>
-                    <td class="operation" id="squareBtn"><i class="fa-solid fa-superscript"></i></td>
+                    <td class="operation" id="squareBtn">
+                        <p>x²</p>
+                    </td>
                     <td class="operation" id="squareRootBtn"><i class="fa-solid fa-square-root-variable"></i></td>
-                    <td class="operation" id="divideBtn"><i class="fa-solid fa-divide"></i></td>
+                    <td class="operation" id="divideBtn" onclick="showOperation('÷')"><i class="fa-solid fa-divide"></i>
+                    </td>
                 </tr>
                 <tr>
                     <td class="operation" onclick="showNum(7)">
@@ -49,7 +51,8 @@
                     <td class="operation" onclick="showNum(9)">
                         <p class="calNum">9</p>
                     </td>
-                    <td class="operation" id="multiplyBtn"><i class="fa-solid fa-xmark"></i></td>
+                    <td class="operation" id="multiplyBtn" onclick="showOperation('x')"><i
+                            class="fa-solid fa-xmark"></i></td>
                 </tr>
                 <tr>
                     <td class="operation" onclick="showNum(4)">
@@ -61,7 +64,8 @@
                     <td class="operation" onclick="showNum(6)">
                         <p class="calNum">6</p>
                     </td>
-                    <td class="operation" id="minusBtn"><i class="fa-solid fa-minus"></i></td>
+                    <td class="operation" id="minusBtn" onclick="showOperation('-')"><i class="fa-solid fa-minus"></i>
+                    </td>
                 </tr>
                 <tr>
                     <td class="operation" onclick="showNum(1)">
@@ -73,19 +77,22 @@
                     <td class="operation" onclick="showNum(3)">
                         <p class="calNum">3</p>
                     </td>
-                    <td class="operation" id="plusBtn"><i class="fa-solid fa-plus"></i></td>
+                    <td class="operation" id="plusBtn" onclick="showOperation('+')"><i class="fa-solid fa-plus"></i>
+                    </td>
                 </tr>
                 <tr>
                     <td class="operation" id="posNegBtn">
                         <p>+/-</p>
                     </td>
-                    <td class="operation" onclick="showNum(0)">
+                    <td class="operation" onclick="showNum('0')">
                         <p class="calNum">0</p>
                     </td>
-                    <td class="operation" id="decimalBtn">
+                    <td class="operation" id="decimalBtn" onclick="showNum('.')">
                         <p>.</p>
                     </td>
-                    <td class="operation equal" id="equalsBtn"><i class="fa-solid fa-equals"></i></td>
+                    <td class="operation equal" id="equalsBtn" onclick="evaluateCalc()"><i
+                            class="fa-solid fa-equals"></i>
+                    </td>
                 </tr>
             </table>
         </div>
