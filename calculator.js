@@ -5,20 +5,39 @@ function divide(x, y) {
     return x / y;
 };
 
-function reciprocol(x) {
-    if (x == 0) {
+function reciprocol() {
+    const num = parseFloat(document.getElementById("result").innerHTML);
+    if (num == 0) {
+        document.getElementById("result").innerHTML = "Cannot divide by zero";
         throw new Error("Cannot divide by zero");
     }
-    try {
-        return 1 / x;
-    } catch (error) {
-        document.getElementById("my_error").innerHTML = error.message;
-    }
+
+    document.getElementById("result").innerHTML = 1 / num;
 
 }
 
-// Math.sqrt()
-// Math.pow(x, y)
+function squared() {
+    const num = parseFloat(document.getElementById("result").innerHTML);
+    document.getElementById("result").innerHTML = Math.pow(num, 2);
+}
+
+function plusMinusNum() {
+    const op_arr = ['+', '-', 'x', '÷'];
+    const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const last_input = document.getElementById("result").innerHTML;
+    const result_num = parseFloat(document.getElementById("result").innerHTML);
+    document.getElementById("result").innerHTML = result_num * (-1);
+    document.getElementById("calculation").innerHTML = result_num * (-1);
+}
+
+function squareRoot() {
+    const num = parseFloat(document.getElementById("result").innerHTML);
+    if (num < 0) {
+        document.getElementById("result").innerHTML = "Invalid input";
+        throw new Error("Invalid input");
+    }
+    document.getElementById("result").innerHTML = Math.sqrt(num);
+}
 
 function clearCalc() {
     document.getElementById("calculation").innerHTML = "";
@@ -27,7 +46,8 @@ function clearCalc() {
 }
 
 function backRemove() {
-    if (document.getElementById("result").innerHTML != "Cannot divide by zero") {
+    const result = document.getElementById("result").innerHTML;
+    if (result != "Cannot divide by zero" && result != "Invalid input") {
         const newSlicedCalculation = document.getElementById("calculation").innerHTML.slice(0, -1);
         document.getElementById("calculation").innerHTML = newSlicedCalculation;
     }
@@ -38,20 +58,79 @@ function backRemove() {
 
 }
 
-function percent() {
-    document.getElementById("result").innerHTML /= 100;
+function percentDivide() {
+    const op_arr = ['+', '-', 'x', '÷'];
+    const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+    const last_input = document.getElementById("calculation").innerHTML.slice(-1);
+
+    const exType = expressType();
+    const calculationStr = document.getElementById("calculation").innerHTML;
+
+    const calcArray = calculationStr.split(exType);
+
+    let num1 = parseFloat(calcArray[0]);
+    let num2 = parseFloat(calcArray[1]);
+
+    if (num_arr.includes(last_input)) {
+        document.getElementById("result").innerHTML /= 100;
+        num2 = document.getElementById("result").innerHTML;
+        document.getElementById("calculation").innerHTML = num1 + expressType() + num2;
+    }
+    else if (last_input == '=') {
+        document.getElementById("result").innerHTML /= 100;
+        document.getElementById("calculation").innerHTML = document.getElementById("result").innerHTML;
+    }
+    else {
+        clearCalc();
+    }
 }
 
 function showNum(num) {
-    document.getElementById("calculation").innerHTML += num;
+    const op_arr = ['+', '-', 'x', '÷'];
+    const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+    const last_input = document.getElementById("calculation").innerHTML.slice(-1);
+    const result = document.getElementById("result").innerHTML;
+
+    // if ((last_input == 0 || result.slice(-1) == 0) && num == '.') {
+    //     document.getElementById("result").innerHTML += '.';
+    //     document.getElementById("calculation").innerHTML += '.';
+    // }
+    if (op_arr.includes(last_input) && document.getElementById("result").innerHTML != 0) {
+        document.getElementById("calculation").innerHTML += num;
+        document.getElementById("result").innerHTML = num;
+
+    }
+    else if (document.getElementById("result").innerHTML == 0 || op_arr.includes(last_input)) {
+        document.getElementById("result").innerHTML = num;
+
+    }
+    // else if (num == 0 && (last_input != '' || !op_arr.includes(last_input))) {
+    //     document.getElementById("calculation").innerHTML += num;
+
+    // }
+    else if (num_arr.includes(result.slice(-1)) && result != 0) {
+        document.getElementById("result").innerHTML += num;
+        if (document.getElementById("calculation").innerHTML != '') {
+            document.getElementById("calculation").innerHTML += num;
+        }
+
+    }
+    // else if (!op_arr.includes(last_input) && document.getElementById("result").innerHTML != 0) {
+    //     document.getElementById("calculation").innerHTML += num;
+    // }
+
     console.log(document.getElementById("calculation").innerHTML);
-}
+};
 
 function showOperation(op) {
     const op_arr = ['+', '-', 'x', '÷'];
+    const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
     if (last_input == '=') {
         document.getElementById("calculation").innerHTML = document.getElementById("result").innerHTML;
+    }
+    if (!num_arr.includes(last_input) && last_input != '=' && !op_arr.includes(last_input)) {
+        document.getElementById("calculation").innerHTML += document.getElementById("result").innerHTML;
     }
     if (!op_arr.includes(last_input)) {
         document.getElementById("calculation").innerHTML += op;
@@ -65,10 +144,17 @@ function showOperation(op) {
 function expressType() {
     const op_arr = ['+', '-', 'x', '÷'];
     const calculationStr = document.getElementById("calculation").innerHTML;
-    for (let i = 0; i < op_arr.length; i++) {
-        if (calculationStr.includes(op_arr[i])) {
-            return op_arr[i];
-        };
+
+    for (let i = 0; i < calculationStr.length; i++) {
+
+        if (calculationStr[i] == '-') {
+            if (!(i == 0 || op_arr.includes(calculationStr[i - 1]))) {
+                return calculationStr[i];
+            }
+        }
+        else if (op_arr.includes(calculationStr[i])) {
+            return calculationStr[i];
+        }
 
     }
 

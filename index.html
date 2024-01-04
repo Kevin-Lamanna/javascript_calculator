@@ -18,7 +18,7 @@
         <div class="operations-container">
             <table class="operations">
                 <tr>
-                    <td class="operation" id="percentBtn">
+                    <td class="operation" id="percentBtn" onclick="percentDivide()">
                         <p>%</p>
                     </td>
                     <td class="operation" id="ceBtn" onclick="clearCalc()">
@@ -31,13 +31,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="operation" id="reciprocolBtn">
+                    <td class="operation" id="reciprocolBtn" onclick="reciprocol()">
                         <p>1/x</p>
                     </td>
-                    <td class="operation" id="squareBtn">
+                    <td class="operation" id="squareBtn" onclick="squared()">
                         <p>x²</p>
                     </td>
-                    <td class="operation" id="squareRootBtn"><i class="fa-solid fa-square-root-variable"></i></td>
+                    <td class="operation" id="squareRootBtn" onclick="squareRoot()"><i
+                            class="fa-solid fa-square-root-variable"></i></td>
                     <td class="operation" id="divideBtn" onclick="showOperation('÷')"><i class="fa-solid fa-divide"></i>
                     </td>
                 </tr>
@@ -81,7 +82,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="operation" id="posNegBtn">
+                    <td class="operation" id="posNegBtn" onclick="plusMinusNum()">
                         <p>+/-</p>
                     </td>
                     <td class="operation" onclick="showNum('0')">
