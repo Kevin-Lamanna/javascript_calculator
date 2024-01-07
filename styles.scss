@@ -1,0 +1,105 @@
+// Coral Color Scheme
+$coral-blue: rgb(56, 90, 124);
+$coral-red: rgb(249, 113, 113);
+$coral-pink: rgb(249, 145, 146);
+$coral-turquoise: rgb(138, 214, 204);
+$coral-skyblue: rgb(178, 238, 230);
+
+// Space Sunset Color Scheme
+$space-purple: rgb(113, 29, 176);
+$space-mauve: rgb(194, 18, 146);
+$space-orange: rgb(239, 64, 64);
+$space-yellow: rgb(255, 167, 50);
+
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 2rem;
+}
+
+.calc-container {
+    position: relative;
+    background-color: white;
+    margin-bottom: 1.5rem;
+
+    #calculation {
+        text-align: right;
+        justify-content: right;
+        font-size: 0.8rem;
+        color: black;
+    }
+
+    #result {
+        text-align: right;
+        justify-content: right;
+    }
+}
+
+.operations-container {
+    position: relative;
+}
+
+td {
+    padding: 0;
+    background-color: white;
+}
+
+.operation {
+    padding: 1rem;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+    margin: 1.2rem;
+    border-style: solid;
+    border-color: black;
+    border: 2px;
+    text-align: center;
+    justify-content: center;
+    // background-color: greenyellow;
+    // background-color: $coral-pink;
+    background-color: $space-yellow;
+
+    i {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+
+
+}
+
+.operation:hover {
+    transform: scale(1.1);
+    // background-color: aquamarine;
+    // background-color: $coral-skyblue;
+    background-color: $space-mauve;
+    color: white;
+}
+
+.equal {
+    // background-color: teal;
+    // background-color: $coral-blue;
+    background-color: $space-purple;
+    font-weight: 600;
+    color: white;
+}
+
+.equal:hover {
+    font-weight: 400;
+    transform: scale(1.1);
+    // background-color: lightcoral;
+    // background-color: $coral-turquoise;
+    background-color: $space-orange;
+    color: black;
+}

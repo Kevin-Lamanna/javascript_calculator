@@ -5,61 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules\@fortawesome\fontawesome-free\css\all.css">
     <title>My Calculator</title>
 </head>
 
 <body>
-    <div class="calc-container">
-        <p class="calculation"></p>
-        <h1 class="result">0</h1>
-    </div>
-    <div class="operations-container">
-        <table class="operations">
-            <tr>
-                <td class="operation percent">%</td>
-                <td class="operation c_e">
-                    <p>CE</p>
-                </td>
-                <td class="operation clear">
-                    <p>C</p>
-                </td>
-                <td class="operation back-btn"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">7</td>
-                <td class="operation">8</td>
-                <td class="operation">9</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">4</td>
-                <td class="operation">5</td>
-                <td class="operation">6</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation">1</td>
-                <td class="operation">2</td>
-                <td class="operation">3</td>
-                <td class="operation"><i></i></td>
-            </tr>
-            <tr>
-                <td class="operation"><i></i></td>
-                <td class="operation">0</td>
-                <td class="operation">.</td>
-                <td class="operation">=</td>
-            </tr>
-        </table>
+    <div class="container">
+        <div class="calc-container">
+            <p id="calculation"></p>
+            <h1 id="result">0</h1>
+        </div>
+        <div class="operations-container">
+            <table class="operations">
+                <tr>
+                    <td class="operation" id="percentBtn" onclick="percentDivide()">
+                        <p>%</p>
+                    </td>
+                    <td class="operation" id="ceBtn" onclick="clearCalc()">
+                        <p>CE</p>
+                    </td>
+                    <td class="operation" id="clearBtn" onclick="clearCalc()">
+                        <p>C</p>
+                    </td>
+                    <td class="operation" id="back-btn" onclick="backRemove()"><i class="fa-solid fa-delete-left"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="operation" id="reciprocolBtn" onclick="reciprocol()">
+                        <p>1/x</p>
+                    </td>
+                    <td class="operation" id="squareBtn" onclick="squared()">
+                        <p>x²</p>
+                    </td>
+                    <td class="operation" id="squareRootBtn" onclick="squareRoot()"><i
+                            class="fa-solid fa-square-root-variable"></i></td>
+                    <td class="operation" id="divideBtn" onclick="showOperation('÷')"><i class="fa-solid fa-divide"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="operation" onclick="showNum(7)">
+                        <p class="calNum">7</p>
+                    </td>
+                    <td class="operation" onclick="showNum(8)">
+                        <p class="calNum">8</p>
+                    </td>
+                    <td class="operation" onclick="showNum(9)">
+                        <p class="calNum">9</p>
+                    </td>
+                    <td class="operation" id="multiplyBtn" onclick="showOperation('x')"><i
+                            class="fa-solid fa-xmark"></i></td>
+                </tr>
+                <tr>
+                    <td class="operation" onclick="showNum(4)">
+                        <p class="calNum">4</p>
+                    </td>
+                    <td class="operation" onclick="showNum(5)">
+                        <p class="calNum">5</p>
+                    </td>
+                    <td class="operation" onclick="showNum(6)">
+                        <p class="calNum">6</p>
+                    </td>
+                    <td class="operation" id="minusBtn" onclick="showOperation('-')"><i class="fa-solid fa-minus"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="operation" onclick="showNum(1)">
+                        <p class="calNum">1</p>
+                    </td>
+                    <td class="operation" onclick="showNum(2)">
+                        <p class="calNum">2</p>
+                    </td>
+                    <td class="operation" onclick="showNum(3)">
+                        <p class="calNum">3</p>
+                    </td>
+                    <td class="operation" id="plusBtn" onclick="showOperation('+')"><i class="fa-solid fa-plus"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="operation" id="posNegBtn" onclick="plusMinusNum()">
+                        <p>+/-</p>
+                    </td>
+                    <td class="operation" onclick="showNum('0')">
+                        <p class="calNum">0</p>
+                    </td>
+                    <td class="operation" id="decimalBtn" onclick="showNum('.')">
+                        <p>.</p>
+                    </td>
+                    <td class="operation equal" id="equalsBtn" onclick="evaluateCalc()"><i
+                            class="fa-solid fa-equals"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 
 
-    <script src="calculator.js"></script>
+
+    <script type="module" src="calculator.js"></script>
 </body>
 
 </html>

@@ -1,1 +1,76 @@
-/*  */
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 2rem;
+}
+
+.calc-container {
+  position: relative;
+  background-color: white;
+  margin-bottom: 1.5rem;
+}
+.calc-container #calculation {
+  text-align: right;
+  justify-content: right;
+  font-size: 0.8rem;
+  color: black;
+}
+.calc-container #result {
+  text-align: right;
+  justify-content: right;
+}
+
+.operations-container {
+  position: relative;
+}
+
+td {
+  padding: 0;
+  background-color: white;
+}
+
+.operation {
+  padding: 1rem;
+  padding-right: 2.3rem;
+  padding-left: 2.3rem;
+  margin: 1.2rem;
+  border-style: solid;
+  border-color: black;
+  border: 2px;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(255, 167, 50);
+}
+.operation i {
+  font-size: 1.1rem;
+}
+.operation p {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.operation:hover {
+  transform: scale(1.1);
+  background-color: rgb(194, 18, 146);
+  color: white;
+}
+
+.equal {
+  background-color: rgb(113, 29, 176);
+  font-weight: 600;
+  color: white;
+}
+
+.equal:hover {
+  font-weight: 400;
+  transform: scale(1.1);
+  background-color: rgb(239, 64, 64);
+  color: black;
+}/*# sourceMappingURL=styles.css.map */
