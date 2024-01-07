@@ -4,7 +4,9 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/Kevin-Lamanna/javascript_calculator/tree/master#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
-    "sass": "^1.69.6"
+    "sass": "^1.69.6",
+    "vite": "^5.0.11"
   }
 }
