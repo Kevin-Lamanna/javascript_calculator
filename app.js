@@ -5,7 +5,7 @@ function divide(x, y) {
     return x / y;
 };
 
-function reciprocol() {
+window.reciprocol = function () {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -37,7 +37,7 @@ function reciprocol() {
 
 }
 
-function squared() {
+window.squared = function () {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -64,7 +64,7 @@ function squared() {
     }
 }
 
-function plusMinusNum() {
+window.plusMinusNum = function () {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -91,7 +91,7 @@ function plusMinusNum() {
     }
 }
 
-function squareRoot() {
+window.squareRoot = function () {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -123,17 +123,42 @@ function squareRoot() {
 
 }
 
-function clearCalc() {
+window.clearCalc = function () {
     document.getElementById("calculation").innerHTML = "";
     document.getElementById("result").innerHTML = 0;
     console.log("Cleared");
 }
 
-function backRemove() {
+window.backRemove = function () {
+    const op_arr = ['+', '-', 'x', '÷'];
     const result = document.getElementById("result").innerHTML;
+    const calculationStr = document.getElementById("calculation").innerHTML;
     if (result != "Cannot divide by zero" && result != "Invalid input") {
-        const newSlicedCalculation = document.getElementById("calculation").innerHTML.slice(0, -1);
-        document.getElementById("calculation").innerHTML = newSlicedCalculation;
+        if (document.getElementById("calculation").innerHTML != '') {
+            if (result.length == 1) {
+                document.getElementById("result").innerHTML = 0;
+                if (op_arr.includes(calculationStr.slice(-1))) {
+                    document.getElementById("calculation").innerHTML = calculationStr;
+                }
+                else {
+                    const newSlicedCalculation = document.getElementById("calculation").innerHTML.slice(0, -1);
+                    document.getElementById("calculation").innerHTML = newSlicedCalculation;
+                }
+            }
+            else if (calculationStr.slice(-1) == '=') {
+                document.getElementById("calculation").innerHTML = '';
+            }
+            else {
+                const newSlicedCalculation = document.getElementById("calculation").innerHTML.slice(0, -1);
+                document.getElementById("calculation").innerHTML = newSlicedCalculation;
+            }
+        }
+        else if (result.length == 1) {
+            document.getElementById("result").innerHTML = 0;
+        }
+        else {
+            document.getElementById("result").innerHTML = result.slice(0, -1);
+        }
     }
     else {
         document.getElementById("calculation").innerHTML = "";
@@ -142,7 +167,7 @@ function backRemove() {
 
 }
 
-function percentDivide() {
+window.percentDivide = function () {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -169,7 +194,7 @@ function percentDivide() {
     }
 }
 
-function showNum(num) {
+window.showNum = function (num) {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -188,10 +213,7 @@ function showNum(num) {
         document.getElementById("result").innerHTML = num;
 
     }
-    // else if (num == 0 && (last_input != '' || !op_arr.includes(last_input))) {
-    //     document.getElementById("calculation").innerHTML += num;
 
-    // }
     else if (num_arr.includes(result.slice(-1)) && result != 0) {
         document.getElementById("result").innerHTML += num;
         if (document.getElementById("calculation").innerHTML != '') {
@@ -199,14 +221,11 @@ function showNum(num) {
         }
 
     }
-    // else if (!op_arr.includes(last_input) && document.getElementById("result").innerHTML != 0) {
-    //     document.getElementById("calculation").innerHTML += num;
-    // }
 
     console.log(document.getElementById("calculation").innerHTML);
 };
 
-function showOperation(op) {
+window.showOperation = function (op) {
     const op_arr = ['+', '-', 'x', '÷'];
     const num_arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const last_input = document.getElementById("calculation").innerHTML.slice(-1);
@@ -244,7 +263,7 @@ function expressType() {
 
 }
 
-function evaluateCalc() {
+window.evaluateCalc = function () {
     const exType = expressType();
     const calculationStr = document.getElementById("calculation").innerHTML;
 
